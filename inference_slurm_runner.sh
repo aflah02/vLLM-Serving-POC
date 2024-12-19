@@ -11,6 +11,7 @@
 #SBATCH --mem=224GB
 
 #SBATCH --constraint="gpu-bw"
+#SBATCH --partition="gpu-bw"
 #SBATCH --gres=gpu:a100:4
 
 # Wall clock limit (max. is 24 hours):
