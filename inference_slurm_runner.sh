@@ -1,7 +1,7 @@
 #!/bin/bash -l
 
-#SBATCH -o SLURM_Logs/job.out.%j
-#SBATCH -e SLURM_Logs/job.err.%j
+#SBATCH -o SLURM_Logs/%x_%j.out
+#SBATCH -e SLURM_Logs/%x_%j.err
 #SBATCH -D ./
 #SBATCH -J llm_inference
 
