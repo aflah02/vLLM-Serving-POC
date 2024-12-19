@@ -26,9 +26,9 @@ def main(args):
 
 if __name__ == "__main__":
     argparser = argparse.ArgumentParser()
-    argparser.add_argument("--model", type=str, default="facebook/opt-125m")
-    argparser.add_argument("--tp_size", type=int, default=1)
-    argparser.add_argument("--pp_size", type=int, default=1)
+    argparser.add_argument("--model", type=str)
+    argparser.add_argument("--tp_size", type=int)
+    argparser.add_argument("--pp_size", type=int)
     argparser.add_argument("--save_path", type=str)
     argparser.add_argument("--queries_path", type=str)
     args = argparser.parse_args()

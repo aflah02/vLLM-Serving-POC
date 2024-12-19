@@ -1,0 +1,4 @@
+https://chatgpt.com/share/676429d0-5a50-8011-920a-8f8660b92e27
+
+scp -r "D:\Windows Folders\Desktop\MPI\FAQ_en.csv" afkhan@raven.mpcdf.mpg.de:/ptmp/afkhan/vLLM-Serving-POC/Data
+

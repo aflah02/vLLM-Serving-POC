@@ -1,0 +1,7 @@
+huggingface-cli download meta-llama/Llama-3.1-70B-Instruct --local-dir /ptmp/afkhan/Models/Llama-3.1-70B-Instruct
+
+huggingface-cli download meta-llama/Llama-3.1-405B-Instruct --local-dir /ptmp/afkhan/Models/Llama-3.1-405B-Instruct
+
+huggingface-cli download NousResearch/Hermes-3-Llama-3.1-405B --local-dir /ptmp/afkhan/Models/Hermes-3-Llama-3.1-405B
+
+huggingface-cli download meta-llama/Llama-3.1-405B-Instruct-FP8 --local-dir /ptmp/afkhan/Models/Llama-3.1-405B-Instruct-FP8
