@@ -10,7 +10,7 @@
 #SBATCH --cpus-per-task=18
 #SBATCH --mem=224GB
 
-#SBATCH --constraint="gpu"
+#SBATCH --constraint="gpu-bw"
 #SBATCH --gres=gpu:a100:4
 
 # Wall clock limit (max. is 24 hours):
@@ -24,11 +24,12 @@ source "/ptmp/afkhan/virtual_environments/vllm_env/bin/activate"
 
 # Define Variables -
 
-model = "/ptmp/afkhan/Models/Llama-3.1-70B-Instruct"
+model = "/ptmp/afkhan/Models/pythia-14m"
 tp_size = 4
 pp_size = 1
-save_path = ""
-queries_path = ""
+prompt_path = "/ptmp/afkhan/vLLM-Serving-POC/Data/Prompt_OHB_Chat_Alpha.txt"
+save_path = "/ptmp/afkhan/vLLM-Serving-POC/Data/Outputs_pythia-14m_OHB_Chat_Alpha_tp_4_pp_1.json"
+queries_path = "/ptmp/afkhan/vLLM-Serving-POC/Data/FAQ_en.csv"
 
 # Run Inference -
 
