@@ -20,14 +20,35 @@ def main(args):
         prompt = f.read()
 
     # Replace <CONTEXT> in prompt with queries
-    queries_with_prompt = [prompt.replace("<CONTEXT>", query) for query in queries]
+    conversation = [
+        {
+            "role": "system",
+            "content": prompt
+        },
+        # {
+        #     "role": "user",
+        #     "content": "Hello"
+        # },
+    ]
+
+    ls_conversations = []
+
+    for query in queries:
+        conv_temp = conversation.copy()
+        conv_temp.append({
+            "role": "user",
+            "content": query
+        })
+        ls_conversations.append(conv_temp)
+
+    print("Sample query: ", ls_conversations[0])
 
     # Warmup Cache
     print("Warming up cache...")
-    llm.generate(queries_with_prompt[0], sampling_params)
+    llm.generate(ls_conversations[0], sampling_params)
 
     # Generate completions
-    completions = llm.generate(queries_with_prompt, sampling_params)
+    completions = llm.generate(ls_conversations, sampling_params)
 
     completion_texts = []
 
