@@ -19,16 +19,11 @@ def main(args):
     with open(args.prompt_path, "r") as f:
         prompt = f.read()
 
-    # Replace <CONTEXT> in prompt with queries
     conversation = [
         {
             "role": "system",
             "content": prompt
         },
-        # {
-        #     "role": "user",
-        #     "content": "Hello"
-        # },
     ]
 
     ls_conversations = []
