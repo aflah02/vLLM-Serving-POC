@@ -22,6 +22,8 @@ module load python-waterboa/2024.06
 
 source "/ptmp/afkhan/virtual_environments/vllm_env/bin/activate"
 
+ray status
+
 # Define Variables -
 
 model="/ptmp/afkhan/Models/Llama-3.1-70B-Instruct"
