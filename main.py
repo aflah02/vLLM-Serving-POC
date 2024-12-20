@@ -7,7 +7,7 @@ def main(args):
     print("Arguments: ", args)
     print("Loading model...")
     llm = LLM(args.model, tensor_parallel_size=args.tp_size, pipeline_parallel_size=args.pp_size, enable_prefix_caching=True)
-    sampling_params = SamplingParams(temperature=0.0)
+    sampling_params = SamplingParams(temperature=0.0, max_tokens=10000)
     print("Model loaded.")
 
     # Read Queries 
