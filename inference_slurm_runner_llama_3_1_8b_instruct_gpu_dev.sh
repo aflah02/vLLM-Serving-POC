@@ -14,7 +14,7 @@
 #SBATCH --gres=gpu:a100:4
 
 # Wall clock limit (max. is 24 hours):
-#SBATCH --time=00:05:00
+#SBATCH --time=00:15:00
 
 module load python-waterboa/2024.06 
 
