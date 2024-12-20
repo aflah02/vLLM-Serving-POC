@@ -3,15 +3,15 @@
 #SBATCH -o SLURM_Logs/%x_%j_%A-%T.out
 #SBATCH -e SLURM_Logs/%x_%j_%A-%T.err
 #SBATCH -D ./
-#SBATCH -J llm_inference
+#SBATCH -J 8b-alpha
 
 #SBATCH --nodes=1
 #SBATCH --tasks-per-node=1
 #SBATCH --cpus-per-task=18
 #SBATCH --mem=224GB
 
-#SBATCH --constraint="gpu-bw"
-#SBATCH --partition="gpu-bw"
+#SBATCH --constraint="gpu"
+#SBATCH --partition="gpu"
 #SBATCH --gres=gpu:a100:4
 
 # Wall clock limit (max. is 24 hours):

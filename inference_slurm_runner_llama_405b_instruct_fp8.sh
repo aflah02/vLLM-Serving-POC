@@ -1,17 +1,17 @@
 #!/bin/bash -l
 
-#SBATCH -o SLURM_Logs/%x_%j.out
-#SBATCH -e SLURM_Logs/%x_%j.err
+#SBATCH -o SLURM_Logs/Llama-3.1-405B-Instruct-FP8_%x_%j.out
+#SBATCH -e SLURM_Logs/Llama-3.1-405B-Instruct-FP8_%x_%j.err
 #SBATCH -D ./
-#SBATCH -J llm_inference
+#SBATCH -J 405bfp8-alpha
 
 #SBATCH --nodes=1
 #SBATCH --tasks-per-node=1
 #SBATCH --cpus-per-task=18
 #SBATCH --mem=224GB
 
-#SBATCH --constraint="gpu-bw"
-#SBATCH --partition="gpu-bw"
+#SBATCH --constraint="gpu"
+#SBATCH --partition="gpu"
 #SBATCH --gres=gpu:a100:4
 
 # Wall clock limit (max. is 24 hours):
@@ -25,11 +25,11 @@ source "/ptmp/afkhan/virtual_environments/vllm_env/bin/activate"
 
 # Define Variables -
 
-model="/ptmp/afkhan/Models/pythia-14m"
+model="/ptmp/afkhan/Models/Llama-3.1-405B-Instruct-FP8"
 tp_size=4
 pp_size=1
 prompt_path="/ptmp/afkhan/vLLM-Serving-POC/Data/Prompt_OHB_Chat_Alpha.txt"
-save_path="/ptmp/afkhan/vLLM-Serving-POC/Data/Outputs_pythia-14m_OHB_Chat_Alpha_tp_4_pp_1.json"
+save_path="/ptmp/afkhan/vLLM-Serving-POC/Data/Outputs_Llama-3.1-405B-Instruct-FP8_OHB_Chat_Alpha_tp_4_pp_1.json"
 queries_path="/ptmp/afkhan/vLLM-Serving-POC/Data/FAQ_en.csv"
 
 # Run Inference -

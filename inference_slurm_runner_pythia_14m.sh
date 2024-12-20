@@ -3,7 +3,7 @@
 #SBATCH -o SLURM_Logs/%x_%j_%A-%T.out
 #SBATCH -e SLURM_Logs/%x_%j_%A-%T.err
 #SBATCH -D ./
-#SBATCH -J llm_inference
+#SBATCH -J pyt-alpha
 
 #SBATCH --nodes=1
 #SBATCH --tasks-per-node=1
