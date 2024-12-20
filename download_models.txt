@@ -8,4 +8,4 @@ huggingface-cli download meta-llama/Llama-3.1-405B-Instruct-FP8 --local-dir /ptm
 
 huggingface-cli download EleutherAI/pythia-14m --local-dir /ptmp/afkhan/Models/pythia-14m
 
-huggingface-cli download meta-llama/Llama-3.1-8B --local-dir /ptmp/afkhan/Models/Llama-3.1-8B
+huggingface-cli download meta-llama/Llama-3.1-8B-Instruct --local-dir /ptmp/afkhan/Models/Llama-3.1-8B-Instruct
