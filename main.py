@@ -6,11 +6,19 @@ import pandas as pd
 def main(args):
     print("Arguments: ", args)
     print("Loading model...")
-    llm = LLM(args.model, tensor_parallel_size=args.tp_size, pipeline_parallel_size=args.pp_size, 
-              enable_prefix_caching=args.enable_prefix_caching,
-              gpu_memory_utilization=args.gpu_memory_utilization,
-                enforce_eager=args.enforce_eager
-              )
+    if not args.use_mp_as_distributed_executor_backend:
+        llm = LLM(args.model, tensor_parallel_size=args.tp_size, pipeline_parallel_size=args.pp_size, 
+                enable_prefix_caching=args.enable_prefix_caching,
+                gpu_memory_utilization=args.gpu_memory_utilization,
+                    enforce_eager=args.enforce_eager
+                )
+    else:
+        llm = LLM(args.model, tensor_parallel_size=args.tp_size, pipeline_parallel_size=args.pp_size, 
+                enable_prefix_caching=args.enable_prefix_caching,
+                gpu_memory_utilization=args.gpu_memory_utilization,
+                    enforce_eager=args.enforce_eager,
+                    distributed_executor_backend="mp"
+                )
     sampling_params = SamplingParams(temperature=0.0, max_tokens=10000)
     print("Model loaded.")
 
@@ -71,5 +79,6 @@ if __name__ == "__main__":
     argparser.add_argument("--enable_prefix_caching", type=bool, default=True)
     argparser.add_argument("--gpu_memory_utilization", type=float, default=0.9)
     argparser.add_argument("--enforce_eager", type=bool, default=False)
+    argparser.add_argument("--use-mp-as-distributed_executor_backend", type=bool, default=False)
     args = argparser.parse_args()
     main(args)
