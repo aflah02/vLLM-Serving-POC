@@ -3,7 +3,7 @@
 #SBATCH -o SLURM_Logs/%x_%j_%A-%T.out
 #SBATCH -e SLURM_Logs/%x_%j_%A-%T.err
 #SBATCH -D ./
-#SBATCH -J 8b-alpha
+#SBATCH -J 70b-alpha
 
 #SBATCH --nodes=1
 #SBATCH --tasks-per-node=1
@@ -14,7 +14,7 @@
 #SBATCH --gres=gpu:a100:4
 
 # Wall clock limit (max. is 24 hours):
-#SBATCH --time=00:05:00
+#SBATCH --time=00:14:00
 
 module load python-waterboa/2024.06 
 
