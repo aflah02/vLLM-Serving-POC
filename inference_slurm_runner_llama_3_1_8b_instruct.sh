@@ -25,11 +25,11 @@ source "/ptmp/afkhan/virtual_environments/vllm_env/bin/activate"
 
 # Define Variables -
 
-model="/ptmp/afkhan/Models/Llama-3.1-70B-Instruct"
+model="/ptmp/afkhan/Models/Llama-3.1-8B-Instruct"
 tp_size=4
 pp_size=1
 prompt_path="/ptmp/afkhan/vLLM-Serving-POC/Data/Prompt_OHB_Chat_Alpha.txt"
-save_path="/ptmp/afkhan/vLLM-Serving-POC/Data/Outputs_Llama-3.1-70B-Instruct_OHB_Chat_Alpha_tp_4_pp_1.json"
+save_path="/ptmp/afkhan/vLLM-Serving-POC/Data/Outputs_Llama-3.1-8B-Instruct_OHB_Chat_Alpha_tp_4_pp_1.json"
 queries_path="/ptmp/afkhan/vLLM-Serving-POC/Data/FAQ_en.csv"
 
 # Run Inference -
