@@ -7,3 +7,5 @@ huggingface-cli download NousResearch/Hermes-3-Llama-3.1-405B --local-dir /ptmp/
 huggingface-cli download meta-llama/Llama-3.1-405B-Instruct-FP8 --local-dir /ptmp/afkhan/Models/Llama-3.1-405B-Instruct-FP8
 
 huggingface-cli download EleutherAI/pythia-14m --local-dir /ptmp/afkhan/Models/pythia-14m
+
+huggingface-cli download meta-llama/Llama-3.1-8B --local-dir /ptmp/afkhan/Models/Llama-3.1-8B

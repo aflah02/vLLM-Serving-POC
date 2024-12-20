@@ -36,14 +36,15 @@ def main(args):
         })
         ls_conversations.append(conv_temp)
 
-    print("Sample query: ", ls_conversations[0])
+    print("Sample query: ")
+    print(ls_conversations[0])
 
     # Warmup Cache
     print("Warming up cache...")
-    llm.generate(ls_conversations[0], sampling_params)
+    llm.chat(ls_conversations[0], sampling_params)
 
     # Generate completions
-    completions = llm.generate(ls_conversations, sampling_params)
+    completions = llm.chat(ls_conversations, sampling_params)
 
     completion_texts = []
 
