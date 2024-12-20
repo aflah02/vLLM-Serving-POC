@@ -18,7 +18,7 @@ def main(args):
                 enable_prefix_caching=args.enable_prefix_caching,
                 gpu_memory_utilization=args.gpu_memory_utilization,
                     enforce_eager=args.enforce_eager,
-                    distributed_executor_backend="mp"
+                    distributed_executor_backend="mp",
                     enable_chunked_prefill=args.enable_chunked_prefill
                 )
     sampling_params = SamplingParams(temperature=0.0, max_tokens=10000)
